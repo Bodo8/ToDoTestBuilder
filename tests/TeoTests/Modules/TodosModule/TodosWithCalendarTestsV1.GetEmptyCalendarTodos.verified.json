@@ -1,0 +1,18 @@
+﻿[
+  {
+    "Description": "Retrieve items from the calendar",
+    "Request": {
+      "Method": {
+        "Method": "GET"
+      },
+      "Path": "http://localhost/todos?tags=calendar-event",
+      "Headers": {
+        "traceparent": "{Scrubbed}"
+      }
+    },
+    "Response": {
+      "StatusCode": "OK",
+      "Payload": {}
+    }
+  }
+]

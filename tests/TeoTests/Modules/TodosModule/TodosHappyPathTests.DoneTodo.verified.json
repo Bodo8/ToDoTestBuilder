@@ -1,0 +1,97 @@
+﻿[
+  {
+    "Description": "Set up a to-do",
+    "Request": {
+      "Method": {
+        "Method": "POST"
+      },
+      "Path": "http://localhost/todos",
+      "Headers": {
+        "traceparent": "{Scrubbed}"
+      },
+      "Payload": {
+        "Title": "Land on the moon Guid_1",
+        "Tags": [
+          "astronomy"
+        ]
+      }
+    },
+    "Response": {
+      "StatusCode": "Created",
+      "Headers": {
+        "Location": [
+          "/Todos/Guid_2"
+        ]
+      },
+      "Payload": {
+        "Id": "Guid_2"
+      }
+    }
+  },
+  {
+    "Description": "Retrieve already created to-do item",
+    "Request": {
+      "Method": {
+        "Method": "GET"
+      },
+      "Path": "http://localhost/Todos/Guid_2",
+      "Headers": {
+        "traceparent": "{Scrubbed}"
+      }
+    },
+    "Response": {
+      "StatusCode": "OK",
+      "Payload": {
+        "Title": "Land on the moon Guid_1",
+        "Tags": [
+          "astronomy"
+        ],
+        "Done": false
+      }
+    }
+  },
+  {
+    "Description": "Mark the to-do as done",
+    "Request": {
+      "Method": {
+        "Method": "PUT"
+      },
+      "Path": "http://localhost/Todos/Guid_2",
+      "Headers": {
+        "traceparent": "{Scrubbed}"
+      },
+      "Payload": {
+        "Title": "Land on the moon Guid_1",
+        "Tags": [
+          "astronomy"
+        ],
+        "Done": true
+      }
+    },
+    "Response": {
+      "StatusCode": "NoContent"
+    }
+  },
+  {
+    "Description": "Retrieve the to-do that has been done",
+    "Request": {
+      "Method": {
+        "Method": "GET"
+      },
+      "Path": "http://localhost/Todos/Guid_2",
+      "Headers": {
+        "traceparent": "{Scrubbed}"
+      }
+    },
+    "Response": {
+      "StatusCode": "OK",
+      "Payload": {
+        "Title": "Land on the moon Guid_1",
+        "Tags": [
+          "astronomy"
+        ],
+        "Done": true
+      }
+    }
+  }
+]

@@ -1,0 +1,83 @@
+﻿[
+  {
+    "Description": "Retrieve items from the calendar",
+    "Request": {
+      "Method": {
+        "Method": "GET"
+      },
+      "Path": "http://localhost/todos?tags=calendar-event",
+      "Headers": {
+        "traceparent": "{Scrubbed}"
+      }
+    },
+    "Response": {
+      "StatusCode": "OK",
+      "Payload": {
+        "Todos": [
+          {
+            "Id": "Guid_1",
+            "Title": "Daily stand up",
+            "Tags": [
+              {
+                "Name": "calendar-event"
+              }
+            ],
+            "Done": true
+          },
+          {
+            "Id": "Guid_2",
+            "Title": "Finish app",
+            "Tags": [
+              {
+                "Name": "calendar-event"
+              },
+              {
+                "Name": "someday"
+              }
+            ],
+            "Done": false
+          },
+          {
+            "Id": "Guid_3",
+            "Title": "Lunch",
+            "Tags": [
+              {
+                "Name": "calendar-event"
+              },
+              {
+                "Name": "in-an-hour"
+              }
+            ],
+            "Done": false
+          },
+          {
+            "Id": "Guid_4",
+            "Title": "Meeting",
+            "Tags": [
+              {
+                "Name": "calendar-event"
+              },
+              {
+                "Name": "in-a-day"
+              }
+            ],
+            "Done": false
+          },
+          {
+            "Id": "Guid_5",
+            "Title": "Sprint review",
+            "Tags": [
+              {
+                "Name": "calendar-event"
+              },
+              {
+                "Name": "in-a-week"
+              }
+            ],
+            "Done": false
+          }
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,99 @@
+﻿[
+  {
+    "Description": "Set up a to-do",
+    "Request": {
+      "Method": {
+        "Method": "POST"
+      },
+      "Path": "http://localhost/todos",
+      "Headers": {
+        "traceparent": "{Scrubbed}"
+      },
+      "Payload": {
+        "Title": "Land on the Mars Guid_1",
+        "Tags": [
+          "astronomy"
+        ]
+      }
+    },
+    "Response": {
+      "StatusCode": "Created",
+      "Headers": {
+        "Location": [
+          "/Todos/Guid_2"
+        ]
+      },
+      "Payload": {
+        "Id": "Guid_2"
+      }
+    }
+  },
+  {
+    "Description": "Retrieve already created to-do item",
+    "Request": {
+      "Method": {
+        "Method": "GET"
+      },
+      "Path": "http://localhost/Todos/Guid_2",
+      "Headers": {
+        "traceparent": "{Scrubbed}"
+      }
+    },
+    "Response": {
+      "StatusCode": "OK",
+      "Payload": {
+        "Title": "Land on the Mars Guid_1",
+        "Tags": [
+          "astronomy"
+        ],
+        "Done": false
+      }
+    }
+  },
+  {
+    "Description": "Change tags by adding one more tag",
+    "Request": {
+      "Method": {
+        "Method": "PUT"
+      },
+      "Path": "http://localhost/Todos/Guid_2",
+      "Headers": {
+        "traceparent": "{Scrubbed}"
+      },
+      "Payload": {
+        "Title": "Land on the Mars Guid_1",
+        "Tags": [
+          "astronomy",
+          "practical"
+        ],
+        "Done": false
+      }
+    },
+    "Response": {
+      "StatusCode": "NoContent"
+    }
+  },
+  {
+    "Description": "Retrieve the to-do that has been changed",
+    "Request": {
+      "Method": {
+        "Method": "GET"
+      },
+      "Path": "http://localhost/Todos/Guid_2",
+      "Headers": {
+        "traceparent": "{Scrubbed}"
+      }
+    },
+    "Response": {
+      "StatusCode": "OK",
+      "Payload": {
+        "Title": "Land on the Mars Guid_1",
+        "Tags": [
+          "astronomy",
+          "practical"
+        ],
+        "Done": false
+      }
+    }
+  }
+]
